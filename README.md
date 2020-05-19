@@ -13,6 +13,7 @@ new to PCC, and that there's some form of username/password authentication
 required to log into the node over the SSH protocol.
 
 At a high level, the steps provided will walk you through:
+
 1. Using `ansible-galaxy` to install a collection that wraps up a simple playbook.
 1. Using `ansible-galaxy` to install roles needed by the collection.
 1. Using `ansible-vault` to create an encrypted store for the credentials needed for the nodes.
@@ -43,7 +44,7 @@ The playbook should run through to completion with each of the nodes now being a
 
 This module only allows for cases where there is a username and password for initial login to the node. In cases where there is (also) an ssh private key and that private key requires a passphrase, use ssh key forwarding. On most systems, that should be as simple as:
 
-1. Running: `eval ``ssh-agent```
+1. Running: `eval $( ssh-agent )`, and
 1. Running: `ssh-add ./id_rsa`
 
 Where `./id_rsa` should be the complete path to the private key to use. The `ssh-add` command will ask for the passphrase and Ansible will be able to manage the nodes using that key when executed from that shell.
