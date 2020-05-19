@@ -1,0 +1,6 @@
+# Sample inventory file. Modify this to meet your specific needs
+[node1]
+192.0.2.100
+
+[node2]
+192.0.2.101

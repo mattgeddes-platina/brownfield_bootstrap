@@ -1,0 +1,8 @@
+---
+- name: Bootstrap Ansible management
+  become_user: root
+  become: true
+  hosts:
+    - all
+  roles:
+    - mattgeddes.ansible_bootstrap

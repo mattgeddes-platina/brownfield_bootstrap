@@ -1,0 +1,26 @@
+---
+## Example variables. These should be filled in for the specific of your own
+## nodes and environment.
+
+## Variables controlling how to initially log into the nodes.
+# Existing default user account to ssh into the node as initially.
+ansible_ssh_user: "ubuntu"
+# Password to ssh into the node as initially.
+ansible_ssh_pass: "ubuntu"
+# Password to become root with. Use in conjunction with ansible_become_method.
+ansible_become_pass: "ubuntu"
+# Method to become root using. Should either be "sudo" or "su".
+ansible_become_method: "sudo"
+
+## Variables controlling the user account to be used by PCC to manage the nodes.
+# User to be used by PCC to manage the nodes. Usually 'pcc'.
+orchestration_user: "pcc"
+# Public OpenSSH key for orchestration_user to trust to allow management by PCC.
+# This may be a URL, or may be the actual key string. Only supports a single
+# key today.
+# PCC makes its public SSH key available over HTTP, so simply replacing the
+# hostname below should suffice for most cases.
+orchestration_pubkey: "http://mypcc.example.com:8989/files/download/id_rsa_ansible_pub"
+# Or the public key can be explicitly provided as a string instead:
+# orchestration_pubkey: "..."
+
